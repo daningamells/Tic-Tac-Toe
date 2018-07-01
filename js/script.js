@@ -4,6 +4,7 @@ let player2 = [];
 let turns = 0;
 let player1Name;
 let player2Name;
+let game = 'live';
 
 (() => {
   const html = `<div class="screen screen-start" id="start"><header><h1>Tic Tac Toe</h1>Player 1 Name: <input type="text" name="fname"><br>
@@ -24,15 +25,12 @@ $('#start > header > a').on('click', function () {
 
 $( "ul li" ).click (function () {
   setTimeout(function computer() {
-  if (turn === "player 2" && player2Name === "Computer") {
-
+  if (turn === "player 2" && player2Name === "Computer" && game === 'live') {
     do {
         var position = Math.floor(Math.random() * Math.floor(9));
-        console.log(position)
     }
     while ($( "#board > ul > li" ).eq(position).hasClass( "box-filled-1" ) || $( "#board > ul > li" ).eq(position).hasClass( "box-filled-2" ))
  $( "#board > ul > li" ).eq(position).click();
- console.log('sfdsf')
 }
 }, 2000);
 });
@@ -139,6 +137,7 @@ player1.includes(6) && player1.includes(4) && player1.includes(2)
        <a href="#" class="button">New game</a>
      </header>
    </div>`;
+   game = 'ended'
    $('html').append(html);
 }
 
@@ -164,6 +163,7 @@ player2.includes(6) && player2.includes(4) && player2.includes(2)
        <a href="#" class="button">New game</a>
      </header>
    </div>`;
+   game = 'ended'
    $('html').append(html);
 }
 
@@ -175,6 +175,7 @@ else if (turns === 9) {
       <a href="#" class="button">New game</a>
     </header>
   </div>`;
+  game = 'ended'
   $('html').append(html);
 }
 $('#finish > header > a').on('click', function() {
