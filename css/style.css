@@ -147,3 +147,18 @@ h1 {
 .box.show_o {
   background-image: url(../img/o.svg);
 }
+
+.screen-start .button {
+    color: #54D17A;
+    margin: 1em;
+}
+
+.screen-start h1 {
+    font-size: 6em;
+    padding: 20px;
+}
+
+input {
+    line-height: normal;
+    margin: 4px;
+}
