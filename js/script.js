@@ -37,6 +37,7 @@ $("ul li").click(function() {
             }
             while ($("#board > ul > li").eq(position).hasClass("box-filled-1") || $("#board > ul > li").eq(position).hasClass("box-filled-2"));
             $("#board > ul > li").eq(position).click();
+            $('.overlay').remove();
         }
     }, 2000);
 });
@@ -195,4 +196,13 @@ $("#board > ul > li").click(() => {
     $('#finish > header > a').on('click', function() {
         location.reload();
     });
+});
+
+// Preventing user slection during computer turn
+
+$("ul li").click(
+    function() {
+if (turn === 'player 2' && player2Name === "Computer"){
+  $( 'body' ).append( `<div class='overlay'></div>` );
+}
 });
