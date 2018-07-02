@@ -179,7 +179,7 @@ $("#board > ul > li").click(() => {
         game = 'ended';
         $('html').append(html);
     } else if (turns === 9) {
-        const html = `<div class="screen screen-win screen-win-two" id="finish">
+        const html = `<div class="screen screen-win screen-win-tie" id="finish">
     <header>
       <h1>Tic Tac Toe</h1>
       <p class="message">It's a Tie!</p>
